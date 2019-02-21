@@ -12,65 +12,6 @@ $("#menu-toggle").click(function (e) {
     e.preventDefault();
     $("#wrapper").toggleClass("active");
 });
-
-
-
-$(document).ready(function(){
-    var $regexname=/^([a-zA-Z]{3,16})$/;
-    $('#first_name').on('keypress keydown keyup',function(){
-             if (!$(this).val().match($regexname)) {
-              // there is a mismatch, hence show the error message
-                 $('.emsg_first').removeClass('hidden');
-                 $('.emsg_first').show();
-             }
-           else{
-                // else, do not display message
-                $('.emsg_first').addClass('hidden');
-               }
-         });
-});
-
-
-
-function required()
-{
-var formData = {
-    firstName: $("#firstname").val(),
-    lastname: $("#last_name").val(),
-    middleName: $("#middle_Name").val(),
-    date_of_birth: $("#date_of_birth").val(),
-    gender: $("#gender").val(),
-    country: $("#country").val(),
-    phone_number: $("#phone_number").val(),
-    phone_Ext: $("#phone_Ext").val(),
-    email: $("#email").val(),
-    password: $("#password").val(),
-    confirm_password: $("#confirm_password").val(),
-    role: $("#role").val(),
-    userName: $("#userName").val(),
-    address: $("#address").val(),
-
-}
-var i;
-console.log('hello',formData.firstName);
-var $regexname=/^([a-zA-Z]{3,16})$/;
-if (!$(this).val().match($regexname)) {
-    // there is a mismatch, hence show the error message
-       $('.emsg_first').removeClass('hidden');
-       $('.emsg_first').show();
-       return false;
-   }
- else{
-      // else, do not display message
-      $('.emsg_first').addClass('hidden');
-
-     }
-
-
-}
-
-
-
 $(document).ready(function () {
 
 

@@ -91,7 +91,7 @@
         outline: none;
         background-color: #1a242f !important;
     }
-
+/* 
   @media(min-width:767px) {
    
 
@@ -118,7 +118,7 @@
         display: inline-block;
       }
       
-}
+} */
 .navbar.navbar-inverse.navbar-fixed-top{
     background-image: linear-gradient(to right, rgb(47, 141, 218) , rgb(30, 189, 218));
 

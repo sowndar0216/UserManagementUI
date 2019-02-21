@@ -98,8 +98,8 @@
         outline: none;
         background-color: #1a242f !important;
     }
-/* 
-  @media(min-width:767px) {
+
+  /* @media(min-width:767px) {
    
 
     #wrapper {
@@ -131,7 +131,7 @@
       display: block;
     }} */
 .navbar.navbar-inverse.navbar-fixed-top{
-    background-image: linear-gradient(to right, rgb(47, 141, 218) , rgb(30, 189, 218));
+    background-image: linear-gradient(to right, #0071CB ,#00B9DA);
 
 }
 
