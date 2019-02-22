@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="test1.css">
+    <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+
+                    </button>
+                    <div class="navbar-brand">
+
+                        <p style="color: blanchedalmond">
+                            user Management
+                        </p>
+                    </div>
+                    <a id="menu-toggle" class="active" style="padding-top: 5px">
+                        <i id="left" class="fa fa-chevron-right"></i>
+                        <!-- <ul class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                            <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul> -->
+                </div>
+            </div>
+        </nav>
+
+        <!-- Top Menu Items -->
+        <div id="side-wrapper" class="active">
+            <nav id="spy">
+
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
+                <ul class="side-nav nav">
+                    <li>
+                        <a href="file:///home/bridgeit/Documents/UserManagement/check.html"><i class="fa fa-home "></i>&nbsp;Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="glyphicon glyphicon-user"></i>
+                            &nbsp; User <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                        <ul id="submenu-1" class="collapse">
+                            <li><a href="file:///home/bridgeit/Documents/UserManagement/newuser.html"></i>new user</a></li>
+                            <li><a href=""></i> user list</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="file:///home/bridgeit/Documents/UserManagement/profile.html"><i class="fa fa-fw fa-user-plus"></i>&nbsp; Profile</a>
+                    </li>
+
+                    <li>
+                        <a href="file:///home/bridgeit/Documents/UserManagement/login.html"><i class="glyphicon glyphicon-off"></i>&nbsp;Logout</a>
+                    </li>
+
+                </ul>
+
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <!-- /#page-wrapper -->
+        <div class="container-fluid ">
+                <div id="page-content-wrapper" style="padding-top:10px; ">
+                    <div class="page-content">
+                       
+                            <div class="row">
+                                <div class="well" style=" padding-top:80px; background-color: white">
+                                    <p style="text-align:left;">New User
+                                        <span style="float:right;">
+                                            <a href="file:///home/bridgeit/Documents/UserManagement/check.html"><i class="fa fa-home "></i>Home</a>
+                                            / <a href="file:///home/bridgeit/Documents/UserManagement/check.html">Dashboard</a>
+                                        </span>
+                                    </p>
+    
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                    <form id="contact-form" >
+                                <div class="row">
+    
+                                    <div class="col-md-8 ">
+                                        <div class="jumbotron" style="background-color:white">
+                                            <p>General</p>
+    
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-6 col-md-4">
+    
+    
+                                                    <div class="form-group">
+    
+                                                        <label class="titleName">First Name</label>
+                                                        <input name="first_name" class="form-control" placeholder="" type="text"
+                                                            id="firstname" required>
+    
+                                            </div>
+                                        </div>
+    
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <div class="form-group">
+                                                <label class="titleName">Middle Name</label>
+                                                <input name="middle_name" class="form-control" placeholder="" type="text"
+                                                    id="middle_name">
+    
+    
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <div class="form-group">
+                                                <label class="titleName">Last Name</label>
+                                                <input name="last_name" class="form-control" placeholder="" type="text"
+                                                    id="last_name">
+                                                <p class="error" style="font-size: 12px"><span class="emsg_last hidden">Alteast
+                                                        3 letter required* </span></p>
+    
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                   
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+    
+    
+                                <div class="jumbotron" style="background-color:white">
+                                    <h3>Photo</h3>
+                                    <label class="titleName">Acceptable image formats are jpg, jpeg, png & gif.</label>
+                                    <label class="titleName">Maximum image size allowed is 2MB.</label>
+    
+                                    <div class="image-uploader" data-base-height="200" data-base-width="200">
+                                        <div class="image">
+    
+    
+                                            <label>click here to choose any image</label>
+    
+                                            <img />
+                                        </div>
+                                        <input id="uploader" type="file" />
+    
+                                    </div>
+    
+    
+    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row  " style="padding-left: 215px">
+                            <div class="col-xs-12 col-sm-6 col-md-2 ">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary   ">submit</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-2  ">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-light ">reset</button>
+                                </div>
+                            </div>
+                        </div>  </form>
+                    </div> 
+                
+                
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+    <script src="test1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+<!--
+    
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
+
+    <div class="container-fluid">
+                                <form id="contact-form" >
+                            <div class="row">
+
+                                <div class="col-md-8 ">
+                                    <div class="jumbotron" style="background-color:white">
+                                        <p>General</p>
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6 col-md-4">
+
+
+                                                <div class="form-group">
+
+                                                    <label class="titleName">First Name</label>
+                                                    <input name="first_name" class="form-control" placeholder="" type="text"
+                                                        id="firstname" required>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label class="titleName">Middle Name</label>
+                                            <input name="middle_name" class="form-control" placeholder="" type="text"
+                                                id="middle_name">
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4">
+                                        <div class="form-group">
+                                            <label class="titleName">Last Name</label>
+                                            <input name="last_name" class="form-control" placeholder="" type="text"
+                                                id="last_name">
+                                            <p class="error" style="font-size: 12px"><span class="emsg_last hidden">Alteast
+                                                    3 letter required* </span></p>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                               
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+
+
+                            <div class="jumbotron" style="background-color:white">
+                                <h3>Photo</h3>
+                                <label class="titleName">Acceptable image formats are jpg, jpeg, png & gif.</label>
+                                <label class="titleName">Maximum image size allowed is 2MB.</label>
+
+                                <div class="image-uploader" data-base-height="200" data-base-width="200">
+                                    <div class="image">
+
+
+                                        <label>click here to choose any image</label>
+
+                                        <img />
+                                    </div>
+                                    <input id="uploader" type="file" />
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row  " style="padding-left: 215px">
+                        <div class="col-xs-12 col-sm-6 col-md-2 ">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary   ">submit</button>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-2  ">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-light ">reset</button>
+                            </div>
+                        </div>
+                    </div>  </form>
+                </div> 
+            
+            
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+    <script src="test1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+            -->

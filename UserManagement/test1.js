@@ -1,3 +1,53 @@
+$('#contact-form').bootstrapValidator({
+    //        live: 'disabled',
+    message: 'This value is not valid',
+
+    fields: {
+        userName: {
+            validators: {
+                notEmpty: {
+                    message: 'The username is required'
+                }
+            }
+        }, password: {
+            validators: {
+                notEmpty: {
+                    message: 'The password is required'
+                },
+
+            }
+        },
+        first_Name: {
+            validators: {
+                notEmpty: {
+                    message: 'The username is required'
+                },
+                notEmpty: {
+                    message: 'The username is required'
+                }
+            }
+        }, last_Name: {
+            validators: {
+                notEmpty: {
+                    message: 'The username is required'
+                },
+                notEmpty: {
+                    message: 'The username is required'
+                }
+            }
+        }, middle_name: {
+            validators: {
+                notEmpty: {
+                    message: 'The username is required'
+                },
+                notEmpty: {
+                    message: 'The username is required'
+                }
+            }
+        }
+    }
+});
+
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
     $(".side-nav .collapse").on("hide.bs.collapse", function () {

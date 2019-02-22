@@ -61,7 +61,7 @@
     top: 51px;
     left: 250px;
     width: 200px;
-    background: #000;
+    background: #2D3640;
     position: fixed;
     height: 100%;
     overflow-y: auto;
@@ -90,7 +90,7 @@
 
     .side-nav>li>a {
         width: 225px;
-        border-bottom: 1px rgba(0,0,0,.3) solid;
+        border-bottom: 1px #2D3640;
     }
 
     .side-nav li a:hover,
