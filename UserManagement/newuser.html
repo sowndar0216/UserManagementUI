@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="test1.css">
+    <link rel="stylesheet" type="text/css" href="newuser.css">
     <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
 </head>
@@ -28,7 +28,7 @@
                     <div class="navbar-brand">
 
                         <p style="color: blanchedalmond">
-                            user Management
+                            User Management
                         </p>
                     </div>
                     <a id="menu-toggle" class="active" style="padding-top: 5px">
@@ -57,22 +57,22 @@
                 <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
                 <ul class="side-nav nav">
                     <li>
-                        <a href="file:///home/bridgeit/Documents/UserManagement/check.html"><i class="fa fa-home "></i>&nbsp;Dashboard</a>
+                        <a href="./home.html"><i class="fa fa-home "></i>&nbsp;Dashboard</a>
                     </li>
                     <li>
                         <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="glyphicon glyphicon-user"></i>
                             &nbsp; User <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                         <ul id="submenu-1" class="collapse">
-                            <li><a href="file:///home/bridgeit/Documents/UserManagement/newuser.html"></i>new user</a></li>
+                            <li><a href="./newuser.html"></i>New User</a></li>
                             <li><a href=""></i> user list</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="file:///home/bridgeit/Documents/UserManagement/profile.html"><i class="fa fa-fw fa-user-plus"></i>&nbsp; Profile</a>
+                        <a href="./profile.html"><i class="fa fa-fw fa-user-plus"></i>&nbsp; Profile</a>
                     </li>
 
                     <li>
-                        <a href="file:///home/bridgeit/Documents/UserManagement/login.html"><i class="glyphicon glyphicon-off"></i>&nbsp;Logout</a>
+                        <a href="./logIn.html"><i class="glyphicon glyphicon-off"></i>&nbsp;  <span id="logout">  Logout </span></a>
                     </li>
 
                 </ul>
@@ -129,16 +129,161 @@
                                         <div class="col-xs-12 col-sm-6 col-md-4">
                                             <div class="form-group">
                                                 <label class="titleName">Last Name</label>
-                                                <input name="last_name" class="form-control" placeholder="" type="text"
-                                                    id="last_name">
-                                                <p class="error" style="font-size: 12px"><span class="emsg_last hidden">Alteast
-                                                        3 letter required* </span></p>
+                                                <input name="last_Name" class="form-control" placeholder="" type="text"
+                                                    id="last_Name">
+                                                
     
     
                                             </div>
                                         </div>
                                     </div>
-                                    
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+
+
+                                            <div class="form-group">
+                                                <label class="titleName">Date Of Birth</label>
+                                                <input id="datepicker" name="datepicker"/>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <div class="form-group">
+                                                <label class="titleName">Gender</label>
+                                                <select class="form-control" id="gender" name="gender">
+                                                    <option value="" selected hidden>--Select--</option>
+
+                                                    <option value="male">Male</option>
+                                                    <option value="female">female</option>
+                                                    <option value="none">none</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <div class="form-group">
+                                                <label class="titleName">Country</label>
+                                                <select class="form-control" id="country" name="country">
+                                                    <option value="" selected hidden>--Select--</option>
+                                                    <option value="India">India</option>
+                                                    <option value="India">salem</option>
+                                                    <option value="tamilnadu">Tamil Nadu</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <label class="titleName">Phone</label>
+                                                <input name="phone_number" class="form-control" placeholder="phone_number"
+                                                    type="text" id="phone_number">
+                                                <label class="titleName">999 999 9999</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <label class="titleName">Phone + Ext</label>
+                                                <input name="phone_Ext" id="phone_Ext" class="form-control"
+                                                    placeholder="" type="text" id="phone_Ext">
+                                                <label  class="titleName" >(+91)999 999 9999</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <label class="titleName">Email</label>
+                                                <input name="email" class="form-control" placeholder="Email or login"
+                                                    type="email" id="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <label class="titleName">Address</label>
+                                                <textarea name="address" id="address" class="form-control" cols="20"
+                                                    rows="5"></textarea>
+                                                <!-- <input name="address" class="form-control" placeholder="address"
+                                                    type="text" id="address"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <div class="form-group">
+                                                <label class="titleName">UserName</label>
+                                                <input name="username" class="form-control" placeholder="username"
+                                                    type="text" id="username">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <div class="form-group">
+                                                <label class="titleName">Password</label>
+                                                <input id="password" type="password" class="form-control"
+                                                    name="password"  >
+                                                <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <div class="form-group">
+                                                <label class="titleName">Confirm Password</label>
+                                                <input name="confirm_password" class="form-control" placeholder=""
+                                                    type="password" id="confirm_password">
+                                              
+                                                    <span id='message'></span>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <label class="titleName">Role</label>
+                                                <select class="form-control" id="role">
+                                                    <option value="" selected hidden>--Select--</option>
+                                                    <option value="India">user</option>
+                                                    <option value="India">admin</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                    
                                 </div>
                             </div>
@@ -190,7 +335,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
-    <script src="test1.js"></script>
+    <script src="newuser.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
 

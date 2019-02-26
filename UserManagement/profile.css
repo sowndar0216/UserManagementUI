@@ -52,7 +52,7 @@
 
 
 #wrapper {
-    padding-left: 200px;
+    padding-left: 230px;
     transition: all 0.4s ease 0s;
   }
   
@@ -60,7 +60,7 @@
     margin-left: -250px; 
     top: 51px;
     left: 250px;
-    width: 200px;
+    width: 230px;
     background: #2D3640;
     position: fixed;
     height: 100%;

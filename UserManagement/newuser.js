@@ -3,7 +3,7 @@ $('#contact-form').bootstrapValidator({
     message: 'This value is not valid',
 
     fields: {
-        userName: {
+        username: {
             validators: {
                 notEmpty: {
                     message: 'The username is required'
@@ -44,6 +44,64 @@ $('#contact-form').bootstrapValidator({
                     message: 'The username is required'
                 }
             }
+        },
+        email: {
+            validators: {
+                notEmpty: {
+                    message: 'The email address is required and cannot be empty'
+                },
+                emailAddress: {
+                    message: 'The email address is not a valid'
+                }
+            }
+        }, datepicker: {
+            validators: {
+                notEmpty: {
+                    message: 'The date of birth is required'
+                },
+                date: {
+                    format: 'DD/MM/YYYY',
+                    message: 'The date of birth is not valid'
+                }
+            }
+        }, gender: {
+            validators: {
+                notEmpty: {
+                    message: 'The gender is required'
+                }
+            }
+        },
+        country: {
+            validators: {
+                notEmpty: {
+                    message: 'The Country is reqiured'
+                }
+
+            }
+
+
+
+        },
+        phone_number:{
+            validators:{
+                notEmpty:{
+                    message:'The phone number is reqiured'
+                }
+            }
+        },
+        address:{
+            validators:{
+                notEmpty:{
+                    message:'The Address is reqiured'
+                }
+            }
+        },
+        role:{
+        validators:{
+            notEmpty:{
+                message:'Role is reqiured'
+            }
+        }
         }
     }
 });
@@ -113,62 +171,62 @@ $(document).ready(function () {
             role: $("#role").val(),
             userName: $("#userName").val(),
             address: $("#address").val(),
-        
+
 
 
         }
-        console.log(formData.firstName,formData.lastname
-            );
-    
+        console.log(formData.firstName, formData.lastname
+        );
+
         $.ajax({
 
-    type : "POST",
-    contentType : "application/json",
-    url :  "http://localhost:8080/usermanagement/add",
-    data : JSON.stringify(formData),
-    dataType : 'json',
-    beforeSend: function(xhr) {
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.setRequestHeader("Content-Type", "application/json");
-},
-    success : function(result) {
-        if(result.message == "done"){
-            console.log('hello');
-            window.location = 'file:///home/bridgeit/Documents/UserManagement/check.html';
+            type: "POST",
+            contentType: "application/json",
+            url: "http://localhost:8080/usermanagement/add",
+            data: JSON.stringify(formData),
+            dataType: 'json',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Accept", "application/json");
+                xhr.setRequestHeader("Content-Type", "application/json");
+            },
+            success: function (result) {
+                if (result.message == "done") {
+                    console.log('hello');
+                    window.location = 'file:///home/bridgeit/Documents/UserManagement/check.html';
+
+                }
+                else {
+
+                    console.log('error')
+                    alert('invalid username and password')
+                }
+                console.log(result);
 
             }
-            else{
-
-                console.log('error')
-        alert('invalid username and password')
-            }
-        console.log(result);
-
+        });
+        resetData();
     }
-});
-resetData();
-}
-function resetData(){
+    function resetData() {
 
-    $("#firstname").val("");
-$("#lastname").val("");
-$("#middle_Name").val(""),
-$("#date_of_birth").val(""),
-$("#gender").val(""),
- $("#country").val(""),
- $("#phone_number").val(""),
- $("#phone_Ext").val(""),
- $("#email").val(""),
- $("#password").val(""),
- $("#confirm_password").val(""),
- $("#role").val(""),
- $("#userName").val(""),
- $("#address").val("")
-}
+        $("#firstname").val("");
+        $("#lastname").val("");
+        $("#middle_Name").val(""),
+            $("#date_of_birth").val(""),
+            $("#gender").val(""),
+            $("#country").val(""),
+            $("#phone_number").val(""),
+            $("#phone_Ext").val(""),
+            $("#email").val(""),
+            $("#password").val(""),
+            $("#confirm_password").val(""),
+            $("#role").val(""),
+            $("#userName").val(""),
+            $("#address").val("")
+    }
 }
 )
-$('#left').click(function(){
-    
+$('#left').click(function () {
+
     $(this).toggleClass('fa fa-chevron-left fa fa-chevron-right');
 
 });
@@ -180,20 +238,20 @@ $('#datepicker').datepicker({
 });
 
 
-$(".toggle-password").click(function() {
+$(".toggle-password").click(function () {
 
     $(this).toggleClass("fa-fw fa-eye-slash");
     var input = $($(this).attr("toggle"));
     if (input.attr("type") == "password") {
-      input.attr("type", "text");
+        input.attr("type", "text");
     } else {
-      input.attr("type", "password");
+        input.attr("type", "password");
     }
-  });
+});
 $('#password, #confirm_password').on('keyup keypress keydown', function () {
     if ($('#password').val() == $('#confirm_password').val()) {
         $('#message').html('Matching').css('color', 'green');
-    } else 
+    } else
         $('#message').html('Not Matching').css('color', 'red');
 });
 
@@ -228,11 +286,11 @@ $('#password, #confirm_password').on('keyup keypress keydown', function () {
                         .data('zoom-factor', 0);
                     $(this).css({
                         'width': $(this).data('base-width'),
-                            'height': $(this).data('base-height')
+                        'height': $(this).data('base-height')
                     });
                     $('.image', $(this)).css({
                         'width': $(this).data('base-width'),
-                            'height': $(this).data('base-height')
+                        'height': $(this).data('base-height')
                     });
                 });
 
@@ -275,7 +333,7 @@ $('#password, #confirm_password').on('keyup keypress keydown', function () {
             $("#uploader").on('change', function (event) {
                 $('.zoom', $(event.currentTarget).parent()).show('fade');
                 UserImage.handleDrop($(event.currentTarget).parent(),
-                event.target.files);
+                    event.target.files);
             });
         },
 
@@ -308,10 +366,10 @@ $('#password, #confirm_password').on('keyup keypress keydown', function () {
                 var pos = $(elt).position();
                 $('img', elt)
                     .css({
-                    'left': elt.data('pos-x'),
+                        'left': elt.data('pos-x'),
                         'top': elt.data('pos-y')
-                })
-                   
+                    })
+
                 UserImage.uploaded[elt] = file;
             });
         },
@@ -320,11 +378,11 @@ $('#password, #confirm_password').on('keyup keypress keydown', function () {
             var fileTracker = new FileReader;
             fileTracker.onload = function () {
                 Resample(
-                elt,
-                this.result,
-                width,
-                height,
-                callback);
+                    elt,
+                    this.result,
+                    width,
+                    height,
+                    callback);
             }
             fileTracker.readAsDataURL(file);
 
@@ -346,10 +404,10 @@ $('#password, #confirm_password').on('keyup keypress keydown', function () {
             $('img', elt)
                 .attr('src', 'http://s.cdpn.io/24822/empty.png')
                 .css({
-                position: '',
-                top: '',
-                left: ''
-            })
+                    position: '',
+                    top: '',
+                    left: ''
+                })
                 .draggable('destroy');
             $(elt)
                 .data('width', $(elt).data('base-width'))
@@ -416,7 +474,7 @@ var Resample = (function (canvas) {
     function Resample(elt, img, width, height, onresample) {
         var
 
-        load = typeof img == "string",
+            load = typeof img == "string",
             i = load || img;
 
         // if string, a new Image is needed
@@ -439,7 +497,7 @@ var Resample = (function (canvas) {
 
     function onload() {
         var
-        img = this,
+            img = this,
             width = img._width,
             height = img._height,
             onresample = img._onresample;
@@ -479,24 +537,24 @@ var Resample = (function (canvas) {
         // drawImage has different overloads
         // in this case we need the following one ...
         context.drawImage(
-        // original image
-        img,
-        // starting x point
-        0,
-        // starting y point
-        0,
-        // image width
-        img.width,
-        // image height
-        img.height,
-        // destination x point
-        0,
-        // destination y point
-        0,
-        // destination width
-        targetWidth,
-        // destination height
-        targetHeight);
+            // original image
+            img,
+            // starting x point
+            0,
+            // starting y point
+            0,
+            // image width
+            img.width,
+            // image height
+            img.height,
+            // destination x point
+            0,
+            // destination y point
+            0,
+            // destination width
+            targetWidth,
+            // destination height
+            targetHeight);
         // retrieve the canvas content as
         // base4 encoded PNG image
         // and pass the result to the callback
@@ -510,4 +568,12 @@ var Resample = (function (canvas) {
     return Resample;
 
 }(
-this.document.createElement("canvas")));
+    this.document.createElement("canvas")));
+    
+$('#logout').click(function (e)
+{
+console.log('logout');
+
+    localStorage.removeItem('token');
+}
+);

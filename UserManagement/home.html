@@ -1,123 +1,133 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+    <title>Bootstrap Example</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="home.css">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
 
-    <title>User Managaement</title>
 
 </head>
 
 <body>
 
 
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+
+                    </button>
+                    <div class="navbar-brand">
+
+                        <p style="color: blanchedalmond; padding-top: 5px;">
+                            User Management
+                        </p>
+                    </div>
+                    <a id="menu-toggle" class="active" style="padding-top: 10px">
+                        <i id="left" class="fa fa-chevron-right"></i>
 
 
-     <div class="container">
+                        <!--
+                     
+                    <ul class="nav navbar-nav navbar-right">
 
-        <div class="d-flex justify-content-lg-center  " style="padding-top: 100px ">
-            <div class="well  well-lg col-lg-4  "  style="width:   385px;  height: 452px; background-color: #FFFFFF">
-                <img src="mi-logo.jpg" class="img-circle center-block" alt="Cinque Terre">
-            </br>
-                <div class="d-flex justify-content-center">
-                    <label style="font-size: 16px; color: #5e6773">Login to your account</label>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                            <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>  -->
                 </div>
-            
+            </div>
+        </nav>
 
-                <form  role="form" id="contact-form"  class="loginverify">
+        <!-- Top Menu Items -->
+        <div id="side-wrapper" class="active">
+            <nav id="spy">
+
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
+                <ul class="side-nav nav">
+                    <li>
+                        <a href="./home"><i class="fa fa-home "></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="glyphicon glyphicon-user"></i>
+                            User <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                        <ul id="submenu-1" class="collapse">
+                            <li><a href="./newuser.html"></i>New User</a></li>
+                            <li><a href="#"></i> User List</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./profile.html"><i class="fa fa-fw fa-user-plus"></i>Profile</a>
+                    </li>
+
+                    <li>
+                        <a href="./logIn.html" class="logout"><span class="glyphicon glyphicon-off"></span>
+                            <span id="logout"> Logout</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+
+        <div id="page-content-wrapper" style="padding-top:10px; ">
+            <div class="page-content">
+                <div class="container-fluid">
+
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group" >
-                                <input name="userName" class="form-control" placeholder="Username" type="text" id="userName" required>
-
-
-                            </div>
+                        <div class="well" style=" padding-top:80px; background-color: white">
+                            <p style="text-align:left;">
+                                Welcome Admin
+                                <span style="float:right;"> <a href=""><i class="fa fa-home "></i>Home</a> / <a href="">Dashboard</a></span>
+                            </p>
+<p>  You last logged in on:    <label id="lastloginStamp"></label></p>
                         </div>
                     </div>
+
                     <div class="row">
-                        <div class="col-lg-12">
-
-                            <div class="form-group ">
-                                <!-- <input name="username" class="form-control" placeholder="Username" type="text" id="username"> -->
-
-                                <input name="password" type="password" class="form-control" placeholder="Password"  id="password">
-
-                            </div>
+                        <div class="col-md-3">
+                            <div class="well">Total 55</div>
                         </div>
-
-                    </div>
-                
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <button class="btn  btn-lg-3 btn-block"  style=" background-color: #00ADFA;     " type="submit"><span style="font-size: 24px;font: bold; color: white"> LOGIN</span> </button>
+                        <div class="col-md-3">
+                            <div class="well" style="background-color: burlywood">active 45</div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="well">Inactive 10</div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="well">Online 1</div>
                         </div>
                     </div>
-                </br>
-                </form>
-                <div class="d-flex justify-content-lg-center  "  >
-                          <a href="file:///home/bridgeit/Documents/UserManagement/forgetPassword.html" class="btn btn-link"> <span style="font-size: 10px" class="glyphicon glyphicon-lock"></span> <span style="font-size: 12px"> Forgot Password?</span></a>
-                
                 </div>
-
             </div>
         </div>
-    </div> 
+        <!-- /#page-wrapper -->
+    </div>
 
-    <!-- <div class="container">
-        <div class="row">
-          <form role="form" id="contact-form" class="contact-form">
-                          <div class="row">
-                          <div class="col-md-4">
-                            <div class="form-group">
-                                  <input type="text" class="form-control" name="Name" autocomplete="off" id="Name" placeholder="Name">
-                            </div>
-                          </div>
-                            <div class="col-md-4">
-                            <div class="form-group">
-                                  <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="E-mail">
-                            </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-4">
-                                  <div class="form-group" >
-                                      
-                                      <input name="username" class="form-control" placeholder="Username" type="text" id="username">
-  
-                                  </div>
-                              </div>
-                          </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-12">
-                            <div class="form-group">
-                                  <textarea class="form-control textarea" rows="3" name="Message" id="Message" placeholder="Message"></textarea>
-                            </div>
-                          </div>
-                          </div>
-                          <div class="row">
-                          <div class="col-md-12">
-                        <button type="submit" class="btn main-btn pull-right">Send a message</button>
-                        </div>
-                        </div>
-                      </form>
-        </div> -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
-        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
-        <script src="home.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="home.js">
+        
+    </script>
 </body>
 
 </html>
