@@ -1,0 +1,261 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@media(min-width:768px) {
+   
+    /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+/* Top Navigation */
+
+
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #1a242f;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    /*border: 1px solid rgba(0,0,0,.15);*/
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: rgb(145, 51, 51);
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+/* Side Navigation */
+
+
+#wrapper {
+    padding-left: 230px;
+    transition: all 0.4s ease 0s;
+  }
+  
+  #side-wrapper {
+    margin-left: -250px; 
+    top: 51px;
+    left: 250px;
+    width: 230px;
+    background: #2D3640;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: all 0.4s ease 0s;
+  }
+  
+ label{
+
+    font-size: 13px;
+ } 
+
+  #wrapper.active {
+    padding-left: 0;
+  }
+  
+  #wrapper.active #side-wrapper {
+    left: 0;
+  }
+  
+  #page-content-wrapper {
+    width: 100%;
+    padding-top: 50px;
+    transition: all 0.4s ease 0s;
+  }
+
+    .side-nav>li>a {
+        color: #fff;
+
+        width: 225px;
+        border-bottom: 1px #2D3640;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+
+  /* @media(min-width:767px) {
+   
+
+    #wrapper {
+        padding-left: 0;
+      }
+      
+      #side-wrapper {
+        left: 0;
+      }
+      
+      #wrapper.active {
+        position: relative;
+        left: 250px;
+      }
+      
+      #wrapper.active #side-wrapper {
+        left: 250px;
+        width: 200px;
+        transition: all 0.4s ease 0s;
+      }
+      
+      #menu-toggle {
+        display: inline-block;
+      }
+      
+} */
+/* @include media-breakpoint-down(md) {
+    .custom {
+      display: block;
+    }} */
+.navbar.navbar-inverse.navbar-fixed-top{
+    background-image: linear-gradient(to right, rgb(47, 141, 218) , rgb(30, 189, 218));
+
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    border-bottom: 1px rgba(0,0,0,.3) solid;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+   
+    color: #fff;    
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.navbar .nav > li > a > .label {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  font-size: 10px;
+  font-weight: normal;
+  min-width: 15px;
+  min-height: 15px;
+  line-height: 1.0em;
+  text-align: center;
+  padding: 2px;
+}
+
+.navbar .nav > li > a:hover > .label {
+  top: 10px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+
+
+#menu-toggle {
+    text-decoration: none;
+    float: left;
+    color: #fff;
+    padding-right: 15px;
+        padding-top: 15px;
+
+}
+body{
+    background-color: #F4F6F9;
+}
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+  }
+  * {
+    box-sizing: border-box;
+}
+
+.container {
+    margin-left: 100px;
+}
+.image-uploader {
+    position: relative;
+}
+.image-uploader:not(.filled) {
+    opacity: 0.7;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1) inset;
+}
+.image-uploader:not(.filled):hover {
+    opacity: 1;
+}
+.image-uploader:not(.filled):hover .image {
+    border: 3px dashed #bbb!important;
+}
+.image-uploader.filled {
+    cursor: move;
+}
+.image-uploader .image {
+    overflow: hidden;
+    border: 1px solid #aaa;
+}
+.image-uploader .image {
+    width: 150px;
+    height: 150px;
+}
+.image label{
+display: inline-block; text-align: center;
+
+}
+.image-uploader.filled label {
+    display: none;
+}
+.image-uploader label {
+    color: #888;
+    font-size: 0.9em;
+    margin: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.image-uploader img {
+    border: none;
+}
+.image-uploader #uploader {
+    display: none;
+} 
+.error{
+    color: red;
+    
+}
+.titleName{
+    font-size: 14px;
+    color: rgb(195, 205, 219);
+}

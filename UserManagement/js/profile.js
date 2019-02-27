@@ -43,13 +43,10 @@ $(document).ready(function () {
             console.log(user);
 
             console.log("hello");
-            //var firstname=result.firstName;
+
 
             console.log(firstname);
-            $('#lastloginStamp').text(user.lastloginStamp); 
-
-
-
+            $('#lastloginStamp').text(user.lastloginStamp);
             if (user.firstName == null) {
                 $('#firstname').text('-');
 
@@ -115,31 +112,20 @@ $(document).ready(function () {
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: "http://localhost:8080/usermanagement/getUser",
+        url: "http://localhost:8080/usermanagement/logInTime",
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Accept", "application/json");
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.setRequestHeader("token", localStorage.getItem('token'));
         },
-        success: function (user) {
-
-            console.log(user);
-
-            console.log("hello");
-            //var firstname=result.firstName;
-
-            console.log(firstname);
-            $('#lastloginStamp').text(user.lastloginStamp); 
-
-
-
-            if (user.firstName == null) {
-                $('#firstname').text('-');
-
-            } else {
-                $('#firstname').text(user.firstName);
+        success: function (logTime) {
+            var i;
+            var time='>';
+            for (i = 0; i < logTime.length; i++) {
+           $("#result").append('>'+logTime[i].lastloginStamp+'<br>');
             }
-           
+
+
         }
     });
 
@@ -165,7 +151,7 @@ $(document).ready(function () {
 
 
 
-     
+
 });
 
 

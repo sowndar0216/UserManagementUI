@@ -84,11 +84,13 @@
   
   #page-content-wrapper {
     width: 100%;
-    padding-top: 70px;
+    padding-top: 55px;
     transition: all 0.4s ease 0s;
   }
 
     .side-nav>li>a {
+        color: #fff;
+
         width: 225px;
         border-bottom: 1px #2D3640;
     }
@@ -182,6 +184,8 @@
     float: left;
     color: #fff;
     padding-right: 15px;
+    padding-top: 15px;
+
 }
 body{
     background-color: rgb(243, 243, 243);
@@ -382,7 +386,7 @@ body{
 }
 
 .card.hovercard .cardheader {
-    background: url("photos/profile.jpeg");
+    background: url("../photos/profile.jpeg");
     background-size: cover;
     height: 280px;
     

@@ -1,3 +1,34 @@
+
+$('#logout').click(function (e) {
+    console.log('logout');
+
+    localStorage.removeItem('token');
+}
+);
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+    $(".side-nav .collapse").on("hide.bs.collapse", function () {
+        $(this).prev().find(".fa").eq(1).removeClass("fa-angle-right").addClass("fa-angle-down");
+    });
+    $('.side-nav .collapse').on("show.bs.collapse", function () {
+        $(this).prev().find(".fa").eq(1).removeClass("fa-angle-down").addClass("fa-angle-right");
+    });
+})
+$("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("active");
+});
+
+$('#left').click(function () {
+
+    $(this).toggleClass('fa fa-chevron-left fa fa-chevron-right');
+
+});
+
+
+
+
+
 $('#contact-form').bootstrapValidator({
     //        live: 'disabled',
     message: 'This value is not valid',
@@ -58,10 +89,6 @@ $('#contact-form').bootstrapValidator({
             validators: {
                 notEmpty: {
                     message: 'The date of birth is required'
-                },
-                date: {
-                    format: 'DD/MM/YYYY',
-                    message: 'The date of birth is not valid'
                 }
             }
         }, gender: {
@@ -82,26 +109,26 @@ $('#contact-form').bootstrapValidator({
 
 
         },
-        phone_number:{
-            validators:{
-                notEmpty:{
-                    message:'The phone number is reqiured'
+        phone_number: {
+            validators: {
+                notEmpty: {
+                    message: 'The phone number is reqiured'
                 }
             }
         },
-        address:{
-            validators:{
-                notEmpty:{
-                    message:'The Address is reqiured'
+        address: {
+            validators: {
+                notEmpty: {
+                    message: 'The Address is reqiured'
                 }
             }
         },
-        role:{
-        validators:{
-            notEmpty:{
-                message:'Role is reqiured'
+        role: {
+            validators: {
+                notEmpty: {
+                    message: 'Role is reqiured'
+                }
             }
-        }
         }
     }
 });
@@ -141,90 +168,6 @@ $("#menu-toggle").click(function (e) {
 
 
 
-
-$(document).ready(function () {
-
-
-
-
-
-    $("#adduser").submit(function (event) {
-        event.preventDefault();
-        ajaxPost();
-
-    });
-    function ajaxPost() {
-
-        // PREPARE FORM DATA
-        var formData = {
-            firstName: $("#firstname").val(),
-            lastname: $("#last_name").val(),
-            middleName: $("#middle_Name").val(),
-            date_of_birth: $("#date_of_birth").val(),
-            gender: $("#gender").val(),
-            country: $("#country").val(),
-            phone_number: $("#phone_number").val(),
-            phone_Ext: $("#phone_Ext").val(),
-            email: $("#email").val(),
-            password: $("#password").val(),
-            confirm_password: $("#confirm_password").val(),
-            role: $("#role").val(),
-            userName: $("#userName").val(),
-            address: $("#address").val(),
-
-
-
-        }
-        console.log(formData.firstName, formData.lastname
-        );
-
-        $.ajax({
-
-            type: "POST",
-            contentType: "application/json",
-            url: "http://localhost:8080/usermanagement/add",
-            data: JSON.stringify(formData),
-            dataType: 'json',
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader("Accept", "application/json");
-                xhr.setRequestHeader("Content-Type", "application/json");
-            },
-            success: function (result) {
-                if (result.message == "done") {
-                    console.log('hello');
-                    window.location = 'file:///home/bridgeit/Documents/UserManagement/check.html';
-
-                }
-                else {
-
-                    console.log('error')
-                    alert('invalid username and password')
-                }
-                console.log(result);
-
-            }
-        });
-        resetData();
-    }
-    function resetData() {
-
-        $("#firstname").val("");
-        $("#lastname").val("");
-        $("#middle_Name").val(""),
-            $("#date_of_birth").val(""),
-            $("#gender").val(""),
-            $("#country").val(""),
-            $("#phone_number").val(""),
-            $("#phone_Ext").val(""),
-            $("#email").val(""),
-            $("#password").val(""),
-            $("#confirm_password").val(""),
-            $("#role").val(""),
-            $("#userName").val(""),
-            $("#address").val("")
-    }
-}
-)
 $('#left').click(function () {
 
     $(this).toggleClass('fa fa-chevron-left fa fa-chevron-right');
@@ -569,11 +512,92 @@ var Resample = (function (canvas) {
 
 }(
     this.document.createElement("canvas")));
-    
-$('#logout').click(function (e)
-{
-console.log('logout');
+
+$('#logout').click(function (e) {
+    console.log('logout');
 
     localStorage.removeItem('token');
 }
 );
+$(document).ready(function () {
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: "http://localhost:8080/usermanagement/getUser",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.setRequestHeader("token", localStorage.getItem('token'));
+        },
+        success: function (user) {
+
+            console.log(user);
+
+            console.log("hello");
+
+
+            console.log(firstname);
+            $('#lastloginStamp').text(user.lastloginStamp);
+            if (user.firstName == null) {
+
+
+                document.getElementById('firstname').value = '-';
+
+            } else {
+                console.log('firstname', user.firstName);
+                document.getElementById('firstname').value = user.firstName;
+            }
+            if (user.middleName == null) {
+                document.getElementById('middle_name').value = ' ';
+
+            } else {
+                document.getElementById('middle_name').value = user.middleName;
+
+            }
+            if (user.lastName == null) {
+                document.getElementById('lastname').value = ' ';
+
+            } else {
+                document.getElementById('lastname').value = user.lastName;
+
+            }
+
+            document.getElementById('datepicker').value = user.date_of_birth;
+
+
+
+            document.getElementById('gender').value = user.gender;
+
+
+
+            document.getElementById('country').value = user.country;
+
+
+
+            document.getElementById('phone_number').value = user.phone;
+
+            if (user.phone_Ext == null) {
+                document.getElementById('phone_Ext').value = '-';
+
+            } else {
+                document.getElementById('phone_Ext').value = user.phone_Ext;
+
+            }
+
+            document.getElementById('address').value = user.address;
+
+
+
+            document.getElementById('email').value = user.email;
+
+
+            document.getElementById('username').value = user.userName;
+            document.getElementById('password').value = user.password;
+
+
+
+        }
+    });
+});
+
+

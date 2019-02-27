@@ -15,7 +15,16 @@ $(function(){
         $(this).prev().find(".fa").eq(1).removeClass("fa-angle-down").addClass("fa-angle-right");        
     });
 })    
+$("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("active");
+});
 
+$('#left').click(function () {
+
+    $(this).toggleClass('fa fa-chevron-left fa fa-chevron-right');
+
+});
 
 
 $(document).ready(function () {

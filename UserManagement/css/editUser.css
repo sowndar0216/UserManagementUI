@@ -5,6 +5,8 @@
 }
 /* Top Navigation */
 
+
+
 .top-nav {
     padding: 0 15px;
 }
@@ -67,6 +69,11 @@
     transition: all 0.4s ease 0s;
   }
   
+ label{
+
+    font-size: 13px;
+ } 
+
   #wrapper.active {
     padding-left: 0;
   }
@@ -77,13 +84,15 @@
   
   #page-content-wrapper {
     width: 100%;
-    padding-top: 70px;
+    padding-top: 50px;
     transition: all 0.4s ease 0s;
   }
 
     .side-nav>li>a {
+        color: #fff;
+
         width: 225px;
-        border-bottom: 1px 2D3640;
+        border-bottom: 1px #2D3640;
     }
 
     .side-nav li a:hover,
@@ -91,8 +100,8 @@
         outline: none;
         background-color: #1a242f !important;
     }
-/* 
-  @media(min-width:767px) {
+
+  /* @media(min-width:767px) {
    
 
     #wrapper {
@@ -110,7 +119,7 @@
       
       #wrapper.active #side-wrapper {
         left: 250px;
-        width: 250px;
+        width: 200px;
         transition: all 0.4s ease 0s;
       }
       
@@ -119,6 +128,10 @@
       }
       
 } */
+/* @include media-breakpoint-down(md) {
+    .custom {
+      display: block;
+    }} */
 .navbar.navbar-inverse.navbar-fixed-top{
     background-image: linear-gradient(to right, rgb(47, 141, 218) , rgb(30, 189, 218));
 
@@ -171,4 +184,78 @@
     float: left;
     color: #fff;
     padding-right: 15px;
+        padding-top: 15px;
+
+}
+body{
+    background-color: #F4F6F9;
+}
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+  }
+  * {
+    box-sizing: border-box;
+}
+
+.container {
+    margin-left: 100px;
+}
+.image-uploader {
+    position: relative;
+}
+.image-uploader:not(.filled) {
+    opacity: 0.7;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1) inset;
+}
+.image-uploader:not(.filled):hover {
+    opacity: 1;
+}
+.image-uploader:not(.filled):hover .image {
+    border: 3px dashed #bbb!important;
+}
+.image-uploader.filled {
+    cursor: move;
+}
+.image-uploader .image {
+    overflow: hidden;
+    border: 1px solid #aaa;
+}
+.image-uploader .image {
+    width: 150px;
+    height: 150px;
+}
+.image label{
+display: inline-block; text-align: center;
+
+}
+.image-uploader.filled label {
+    display: none;
+}
+.image-uploader label {
+    color: #888;
+    font-size: 0.9em;
+    margin: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.image-uploader img {
+    border: none;
+}
+.image-uploader #uploader {
+    display: none;
+} 
+.error{
+    color: red;
+    
+}
+.titleName{
+    font-size: 14px;
+    color: rgb(195, 205, 219);
 }

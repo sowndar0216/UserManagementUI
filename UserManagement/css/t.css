@@ -1,0 +1,98 @@
+
+.inforide {
+
+    border: 1px solid rgba(148, 58, 58, 0.15);
+    background-color: white;
+    border-radius: 8px;
+    height: 100px;
+
+  }
+  
+  
+  .one a{
+    text-align: center;
+	float: left;
+	width: 60px;
+	height: 60px;
+	border: 1px ;
+	border-radius: 100%;
+     /*space between*/margin-left: 15px;
+     margin-top: 17px;
+    background-color: #009DDD; 
+
+
+} 
+.one a i{
+	font-size: 20px;
+    line-height: 58px;
+    color: #f1f1f1;
+    
+}
+  
+.two a{
+    text-align: center;
+	float: left;
+	width: 60px;
+	height: 60px;
+	border: 1px ;
+	border-radius: 100%;
+     /*space between*/margin-left: 15px;
+     margin-top: 17px;
+    background-color: #00B98F; 
+    
+
+} 
+.two a i{
+	font-size: 20px;
+    line-height: 58px;
+	color: #f1f1f1;
+}
+  
+.three a{
+    text-align: center;
+	float: left;
+	width: 60px;
+	height: 60px;
+	border: 1px ;
+	border-radius: 100%;
+     /*space between*/margin-left: 15px;
+     margin-top: 17px;
+    background-color: #FF3F21; 
+    
+
+} 
+.three a i{
+	font-size: 20px;
+    line-height: 58px;
+	color: #f1f1f1;
+}
+  
+  
+  .fontsty {
+    margin-right: -15px;
+  }
+  
+  .fontsty h2{
+    color: #6E6E6E;
+    font-size: 20px;
+    text-align: right;
+    margin-right: 300px;
+
+  }
+  
+  .fontsty h4{
+    color: #6E6E6E;
+    font-size: 18px;
+    text-align: right;
+    margin-right: 300px;
+}
+  
+  .content-wrapper {
+    min-height: calc(100vh - 56px);
+    padding-top: 4rem;
+    overflow-x: hidden;
+    background: transparent;
+    
+  }
+  
+  

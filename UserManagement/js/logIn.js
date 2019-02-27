@@ -57,7 +57,7 @@ if(formData.userName!=""){
                     console.log('hello');
 
                     localStorage.setItem('token',result.token);
-                    window.location = 'file:///home/bridgeit/Documents/UserManagement/home.html';
+                    window.location = './home.html';
                 }
                 else if (result.message == "user") {
                     console.log('user')
