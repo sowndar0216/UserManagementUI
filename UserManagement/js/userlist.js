@@ -28,26 +28,30 @@ $('#left').click(function () {
 
 
 $(document).ready(function () {
-    $.ajax({
-        type: "GET",
-        contentType: "application/json",
-        url: "http://localhost:8080/usermanagement/getUser",
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader("Accept", "application/json");
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.setRequestHeader("token", localStorage.getItem('token'));
-        },
-        success: function (user) {
+   
 
-            console.log(user);
+        var table = $('#table').DataTable({
+        "sAjaxSource": "http://localhost:8080/usermanagement/accountList",
+        "sAjaxDataProp": "",
+        "order": [[ 0, "asc" ]],
+        "aoColumns": [
+    
+        { "mData": "userName" },
+        { "mData": "email" },
+        { "mData": "date_of_birth" },
+        { "mData": "status" },
+        { "mData": "role" },
+        {render : editIcon}
 
-            $('#lastloginStamp').text(user.lastloginStamp);
+        ]
+        })
 
-        }
-    });
+       
+
 });
 
-
-$(document).ready(function() {
-    $('#example').DataTable();
-} );
+var editIcon=function(data,type,row){
+    if(type ==='display'){
+        return '<a href="./editUser.html" class="fa fa-pencil"/>';
+    }
+}

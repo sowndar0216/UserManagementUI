@@ -601,3 +601,89 @@ $(document).ready(function () {
 });
 
 
+
+
+$(document).ready(function () {
+
+
+
+
+
+    $("#updateUser").submit(function (event) {
+        event.preventDefault();
+        ajaxPost();
+
+    });
+    function ajaxPost() {
+
+        // PREPARE FORM DATA
+        var formData = {
+            firstName: $("#firstname").val(),
+            lastname: $("#last_name").val(),
+            middleName: $("#middle_Name").val(),
+            date_of_birth: $("#date_of_birth").val(),
+            gender: $("#gender").val(),
+            country: $("#country").val(),
+            phone_number: $("#phone_number").val(),
+            phone_Ext: $("#phone_Ext").val(),
+            email: $("#email").val(),
+            password: $("#password").val(),
+            confirm_password: $("#confirm_password").val(),
+            role: $("#role").val(),
+            userName: $("#userName").val(),
+            address: $("#address").val(),
+
+
+
+        }
+        console.log(formData.firstName, formData.lastname
+        );
+
+        $.ajax({
+
+            type: "POST",
+            contentType: "application/json",
+            url: "http://localhost:8080/usermanagement/update",
+            data: JSON.stringify(formData),
+            dataType: 'json',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Accept", "application/json");
+                xhr.setRequestHeader("Content-Type", "application/json");
+            },
+            success: function (result) {
+                if (result.message == "done") {
+                    console.log('hello');
+                    window.location = 'file:///home/bridgeit/Documents/UserManagement/profile.html';
+
+                }
+               
+                console.log(result);
+
+            }
+        });
+
+
+
+
+        
+        resetData();
+    }
+    function resetData() {
+
+        $("#firstname").val("");
+        $("#lastname").val("");
+        $("#middle_Name").val(""),
+            $("#date_of_birth").val(""),
+            $("#gender").val(""),
+            $("#country").val(""),
+            $("#phone_number").val(""),
+            $("#phone_Ext").val(""),
+            $("#email").val(""),
+            $("#password").val(""),
+            $("#confirm_password").val(""),
+            $("#role").val(""),
+            $("#userName").val(""),
+            $("#address").val("")
+    }
+}
+)
